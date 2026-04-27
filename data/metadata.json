@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-04-27T04:01:44.825597+00:00",
+  "repo": "AlexChenIC/cva6-tier-ci-test-20260427",
+  "workflows": [
+    "ci",
+    "tier1",
+    "tier2"
+  ]
+}
