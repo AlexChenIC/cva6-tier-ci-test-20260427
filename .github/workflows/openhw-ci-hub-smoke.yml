@@ -1,0 +1,24 @@
+# Copyright 2026 OpenHW Group
+# SPDX-License-Identifier: Apache-2.0
+
+name: openhw-ci-hub-smoke
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: openhw-ci-hub-smoke-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  tier1-hub-validation:
+    uses: AlexChenIC/openhw_ci_hub-dev/.github/workflows/riscv-tier1.yml@main
+    with:
+      arch: RV32
+      target: cv32a65x
+      testcase: smoke-tests-cv32a65x
+      mode: script
+      simulator: veri-testharness,spike
+      install-tools: false
+      validate-only: true
+    secrets: inherit
